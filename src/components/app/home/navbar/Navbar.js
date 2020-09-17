@@ -99,7 +99,7 @@ function Navbar(props) {
   const [dense, setDense] = useState();
 
   const handleScroll = () => {
-    if (window.pageYOffset > 150) {
+    if (window.pageYOffset > 600) {
       if (background === "transparent") setBackground("primary");
     } else {
       if (background === "primary") setBackground("transparent");

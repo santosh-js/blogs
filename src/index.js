@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import "../src/components/i18n-setup/i18n";
 import * as serviceWorker from "./serviceWorker";
+// import "dist/Typist.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
