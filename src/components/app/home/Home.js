@@ -1,15 +1,22 @@
-import React, { useCallback, useState } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import Navbar from "./navbar/Navbar";
 import AuthModalPortal from "../authentication-portal/AuthModalPortal";
 import Modal from "../authentication-portal/Modal";
 import Footer from "./footer/Footer";
-import Blogs from "./blogs/Blogs";
+import BatchBlogs from "./blogs/BatchBlogs";
 import CustomBanner from "./banner/Banner";
+import { getBlogs } from "../../../actions/blogsActions";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 function Home(props) {
   const [open, setOpen] = useState(false);
 
   const url = props.history;
+
+  useEffect(() => {
+    props.getBlogs();
+  }, []);
 
   const handleOpen = useCallback(() => {
     setOpen(true);
@@ -25,10 +32,19 @@ function Home(props) {
       <AuthModalPortal url={url} modal={open} closeModal={handleClose} />
       <Modal />
       <CustomBanner />
-      <Blogs />
+      <BatchBlogs blogs={props.blogs} numPerBatch={9} />
       <Footer />
     </div>
   );
 }
 
-export default Home;
+Home.propTypes = {
+  blogs: PropTypes.array.isRequired,
+  getBlogs: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  blogs: state.blogs.blogs,
+});
+
+export default connect(mapStateToProps, { getBlogs })(Home);

@@ -18,6 +18,7 @@
 
 .zone {
   cursor: pointer;
+  overflow: hidden;
   /* display: inline-block; */
   border-radius: 4px;
   border: 1px solid #bbb;

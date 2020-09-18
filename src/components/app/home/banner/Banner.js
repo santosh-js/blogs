@@ -31,6 +31,7 @@ function CustomBanner() {
           url={main}
           playing={true}
           loop
+          playbackRate={0.8}
           width="100%"
           height="100%"
         />
@@ -50,16 +51,10 @@ function CustomBanner() {
         }}
       >
         <Typist>
-          <p style={{ color: "#a71930" }}> Welcome To Spineor Blogspot </p>
+          <p style={{ color: "#f96854" }}> Welcome To Spineor Blogspot </p>
           <Typist.Delay ms={1000} />
-          <h6 style={{ color: "#f96854" }}>Find latest blogs below</h6>
+          <p style={{ color: "#a71930" }}>Find latest blogs below</p>
         </Typist>
-        <Typed
-          strings={["Get a Job 👨‍💻", "Get a Car 🚗", "Get a TV 📺"]}
-          typeSpeed={50}
-          backSpeed={50}
-          loop
-        />
 
         <Typist>
           <span> Feeling Bored !</span>
@@ -69,6 +64,12 @@ function CustomBanner() {
           </span>
         </Typist>
         <br />
+        <Typed
+          strings={["Get a Job 👨‍💻", "Get a Car 🚗", "Get a TV 📺"]}
+          typeSpeed={50}
+          backSpeed={50}
+          loop
+        />
         <br />
         <Typed
           style={{ color: "#8de86e" }}

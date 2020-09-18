@@ -12,3 +12,5 @@ export const FETCH_LOCATION = "FETCH_LOCATION";
 export const GET_BLOGS = "GET_BLOGS";
 export const ADD_BLOG = "ADD_BLOG";
 export const DELETE_BLOG = "DELETE_BLOG";
+
+export const MUI_THEME = "MUI_THEME";
