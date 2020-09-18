@@ -41,8 +41,9 @@ function Navbar(props) {
   const { properties } = props;
   const [expanded, setExpanded] = useState(false);
 
-  const isMobile = useCustomBreakpoint(properties.themeObject.theme);
-
+  const [isMobile, isTab, isDesktop] = useCustomBreakpoint(
+    properties.themeObject.theme
+  );
   const classes = useStyles();
   const { t, i18n } = useTranslation();
 
@@ -99,7 +100,7 @@ function Navbar(props) {
   const [dense, setDense] = useState();
 
   const handleScroll = () => {
-    if (window.pageYOffset > 600) {
+    if (window.pageYOffset > 100) {
       if (background === "transparent") setBackground("primary");
     } else {
       if (background === "primary") setBackground("transparent");

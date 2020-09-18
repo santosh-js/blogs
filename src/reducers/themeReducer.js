@@ -2,18 +2,12 @@ import { CHANGE_THEME } from "../actions/types";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 const initialState = {
-  //   enable: false,
-  // theme: {
-  //   background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-  // },
   theme: createMuiTheme({
-    // breakpoints: {
-    //   values: {
-    //     tablet: 640,
-    //     laptop: 1024,
-    //     desktop: 1280,
-    //   },
-    // },
+    layouts: {
+      mobile: { min: 0, max: 768 },
+      tab: { min: 768, max: 992 },
+      desktop: { min: 992, max: 3600 },
+    },
     palette: {
       type: "light",
     },

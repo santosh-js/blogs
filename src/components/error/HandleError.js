@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./HandleError.module.css";
 import { NavLink } from "react-router-dom";
-import { ERRORS } from "../database/Errors";
+import { ERRORS } from "../database/ErrorsDB";
 // import FIRST_INDEX from "../auth/services/AuthService";
 
 function getErrorByUri(props) {

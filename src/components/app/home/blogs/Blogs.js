@@ -1,5 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Blogs.module.css";
+import PropTypes from "prop-types";
+import Blog from "./Blog";
 import colors from "./Colors.module.css";
 import Typography from "@material-ui/core/Typography";
 // import { connect } from "react-redux";
@@ -12,12 +14,14 @@ import planet5 from "../../../../assets/planets/planet5.jpg";
 import planet6 from "../../../../assets/planets/planet6.jpg";
 import Typist from "react-typist";
 import classnames from "classnames";
+import { getBlogs } from "../../../../actions/blogsActions";
+import { connect } from "react-redux";
 
 function Blogs(props) {
-  // const [location, setLocation] = useState(props.location);
+  console.log(props);
 
   useEffect(() => {
-    console.log("get the ip here !!");
+    props.getBlogs();
   }, []);
 
   return (
@@ -50,69 +54,30 @@ function Blogs(props) {
       </div>
       <div className={classnames(`${styles.container}`)}>
         <div className={classnames(`${styles.zone} ${colors.green}`)}>
+          {/*{props.blogs.map((blog) => (
+            <Blog key={blog.id} blog={blog} />
+          ))}*/}
           <img src={planet1} alt="" className={styles.image} />
           <figcaption className={styles.font}>
-            <code>Planet - GP 600</code>
-          </figcaption>
-        </div>
-        <div className={classnames(`${styles.zone} ${colors.red}`)}>
-          <img src={planet2} alt="" className={styles.image} />
-          <figcaption className={styles.font}>
-            <code>Planet - Spe</code>
-          </figcaption>
-        </div>
-        <div className={classnames(`${styles.zone} ${colors.yellow}`)}>
-          <img src={planet3} alt="" className={styles.image} />
-          <figcaption className={styles.font}>
-            <code>Planet - Arion</code>
-          </figcaption>
-        </div>
-        <div className={classnames(`${styles.zone} ${colors.grey}`)}>
-          <img src={planet4} alt="" className={styles.image} />
-          <figcaption className={styles.font}>
-            <code>Planet - Arkas</code>
-          </figcaption>
-        </div>
-        <div className={classnames(`${styles.zone} ${colors.black}`)}>
-          <img src={planet5} alt="" className={styles.image} />
-          <figcaption className={styles.font}>
-            <code>Planet - Orbitar</code>
-          </figcaption>
-        </div>
-        <div className={classnames(`${styles.zone} ${colors.brown}`)}>
-          <img src={planet6} alt="" className={styles.image} />
-          <figcaption className={styles.font}>
-            <code>Planet - Taphao Thong</code>
-          </figcaption>
-        </div>
-        <div className={classnames(`${styles.zone} ${colors.blue}`)}>
-          <img src={planet1} alt="" className={styles.image} />
-          <figcaption className={styles.font}>
-            <code>Planet - Taphao Kaew</code>
-          </figcaption>
-        </div>
-        <div className={classnames(`${styles.zone} ${colors.darkred}`)}>
-          <img src={planet2} alt="" className={styles.image} />
-          <figcaption className={styles.font}>
-            <code>Planet - Dimidium</code>
-          </figcaption>
-        </div>
-        <div className={classnames(`${styles.zone} ${colors.purple}`)}>
-          <img src={planet3} alt="" className={styles.image} />
-          <figcaption className={styles.font}>
-            <code>Planet - Galileo</code>
+            <code>Planets</code>
           </figcaption>
         </div>
         <div className={classnames(`${styles.zone} ${colors.green}`)}>
-          <img src={planet4} alt="" className={styles.image} />
+          {/*{props.blogs.map((blog) => (
+            <Blog key={blog.id} blog={blog} />
+          ))}*/}
+          <img src={planet2} alt="" className={styles.image} />
           <figcaption className={styles.font}>
-            <code>Planet - Brahe</code>
+            <code>Planets</code>
           </figcaption>
         </div>
-        <div className={classnames(`${styles.zone} ${colors.black}`)}>
-          <img src={planet5} alt="" className={styles.image} />
+        <div className={classnames(`${styles.zone} ${colors.green}`)}>
+          {/*{props.blogs.map((blog) => (
+              <Blog key={blog.id} blog={blog} />
+            ))}*/}
+          <img src={planet3} alt="" className={styles.image} />
           <figcaption className={styles.font}>
-            <code>Planet - Lipperhey</code>
+            <code>Planets</code>
           </figcaption>
         </div>
       </div>
@@ -120,4 +85,13 @@ function Blogs(props) {
   );
 }
 
-export default Blogs;
+Blogs.propTypes = {
+  blogs: PropTypes.array.isRequired,
+  getBlogs: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  blogs: state.blogs.blogs,
+});
+
+export default connect(mapStateToProps, { getBlogs })(Blogs);

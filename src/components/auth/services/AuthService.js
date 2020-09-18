@@ -1,4 +1,4 @@
-import { USERS } from "../../database/Users";
+import { USERS } from "../../database/UsersDB";
 
 export const USER_SESSION = "unique_session_id";
 

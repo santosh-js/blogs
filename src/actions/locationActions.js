@@ -5,7 +5,6 @@ This action is triggered by blogs component
 */
 export const getLocation = (location) => async (dispatch) => {
   try {
-    console.log("LOCATION FETCH IN PROGRESS");
     dispatch({
       type: FETCH_LOCATION,
       payload: location,
