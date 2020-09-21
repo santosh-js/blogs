@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 
-import themeReducer from "./themeReducer";
 import locationReducer from "./locationReducer";
 import blogsReducer from "./blogsReducer";
+import muiReducer from "./muiReducer";
 
 export default combineReducers({
-  theme: themeReducer,
+  mui: muiReducer,
   location: locationReducer,
   blogs: blogsReducer,
 });

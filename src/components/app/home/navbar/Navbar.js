@@ -21,7 +21,7 @@ import { useStyles } from "./Navbar.style";
 import { AccountCircle } from "@material-ui/icons";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MenuIcon from "@material-ui/icons/Menu";
-import { changeTheme } from "../../../../actions/themeActions";
+import { changeTheme } from "../../../../actions/muiActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -408,7 +408,7 @@ Loading.propTypes = {
 
 // getting the theme object from store as props
 const mapStateToProps = (state) => ({
-  themeObject: state.theme,
+  themeObject: state.mui,
 });
 
 // loading component for suspense fallback

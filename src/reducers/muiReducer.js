@@ -1,5 +1,5 @@
-import { CHANGE_THEME } from "../actions/types";
-import { createMuiTheme } from "@material-ui/core/styles";
+import { CHANGE_THEME, GET_STYLES } from "../actions/types";
+import { createMuiTheme, makeStyles } from "@material-ui/core/styles";
 
 const initialState = {
   theme: createMuiTheme({
@@ -12,25 +12,21 @@ const initialState = {
       type: "light",
     },
   }),
+  style: makeStyles({}),
 };
-
-// const booleanActionPayload = (payload) => {
-//   if (payload) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// };
 
 export default function (state = initialState, action) {
   switch (action.type) {
     case CHANGE_THEME:
       return {
         ...state,
-        // enable: booleanActionPayload(action.payload),
         theme: action.payload,
       };
-
+    case GET_STYLES:
+      return {
+        ...state,
+        style: action.payload,
+      };
     default:
       return state;
   }

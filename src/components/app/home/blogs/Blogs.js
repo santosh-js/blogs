@@ -2,40 +2,66 @@ import React, { useState, useEffect } from "react";
 import styles from "./Blogs.module.css";
 import Blog from "./Blog";
 import colors from "./Colors.module.css";
-import Typography from "@material-ui/core/Typography";
-// import { connect } from "react-redux";
-// import { TextField } from "@material-ui/core";
+import { connect } from "react-redux";
+import { Typography, Paper } from "@material-ui/core/";
+import PropTypes from "prop-types";
+import InputBase from "@material-ui/core/InputBase";
+import Divider from "@material-ui/core/Divider";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+import SearchIcon from "@material-ui/icons/Search";
+import DirectionsIcon from "@material-ui/icons/Directions";
 import Typist from "react-typist";
 import classnames from "classnames";
+import { makeStyles } from "@material-ui/core/styles";
 
 function Blogs(props) {
+  const classes = makeStyles({
+    // root: {
+    //   background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+    //   border: 0,
+    //   borderRadius: 3,
+    //   boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+    //   color: "white",
+    //   display: "flex",
+    //   alignItems: "center",
+    //   height: 48,
+    //   padding: "0 30px",
+    // },
+    root: {
+      display: "flex",
+      background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+      marginTop: "10px",
+      padding: "2px 4px",
+      // width: "40%",
+      height: 55,
+    },
+    input: {
+      marginLeft: props.theme.spacing(5),
+      flex: 1,
+    },
+    iconButton: {
+      padding: 10,
+    },
+  })();
+
   return (
     <>
-      {/*  <div className={styles.section}>
-        <TextField
-          type="text"
-          name="location"
-          value={location}
-          label="Filter by name"
-          variant="outlined"
-        />
-        <TextField
-          type="text"
-          name="location"
-          value={location}
-          label="Enter your city name"
-          variant="outlined"
-          style={{ marginLeft: "20px" }}
-        />
-      </div> */}
-
-      <div className={styles.section}>
-        <Typography
-          style={{ fontFamily: "Courier New", color: "#3be8b0" }}
-          variant="h2"
-        >
-          {"Blog Posts"}
-        </Typography>
+      <div className={classnames(`${styles.search}`)}>
+        <Paper component="form" className={classes.root}>
+          <InputBase
+            className={classes.input}
+            placeholder="Search in library"
+            inputProps={{ "aria-label": "library" }}
+          />
+          <IconButton
+            type="submit"
+            className={classes.iconButton}
+            aria-label="search"
+          >
+            <SearchIcon />
+          </IconButton>
+        </Paper>
       </div>
       <div className={classnames(`${styles.container}`)}>
         {props.blogs.map((blog) => (
@@ -46,4 +72,11 @@ function Blogs(props) {
   );
 }
 
-export default Blogs;
+Blogs.propTypes = {
+  theme: PropTypes.object.isRequired,
+};
+const mapStateToProps = (state) => ({
+  theme: state.mui.theme,
+});
+
+export default connect(mapStateToProps, null)(Blogs);

@@ -1,0 +1,12 @@
+.letter {
+  font-size: 60px;
+  font-family: "Pacifico", cursive;
+  display: inline-block;
+  color: #999;
+  transition: all 250ms ease-in-out;
+}
+
+.letter.active {
+  transform: scale(1.5) rotata(250deg);
+  color: blue;
+}

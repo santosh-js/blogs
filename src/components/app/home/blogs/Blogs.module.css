@@ -1,11 +1,19 @@
 .image {
-  margin: 10px;
-  height: 278px;
-  width: 278px;
+  margin: 20px;
+  height: 260px;
+  width: 260px;
   border-radius: 4px;
   /* border: 1px solid #bbb; */
   text-align: center;
   transition: all 0.3s linear;
+}
+
+.search {
+  max-width: 960px;
+  margin: 20px auto 30px;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(250px, 3fr));
+  justify-content: center;
 }
 
 .container {

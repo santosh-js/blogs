@@ -1,4 +1,5 @@
-import { CHANGE_THEME, MUI_THEME } from "./types";
+import { CHANGE_THEME, MUI_THEME, GET_STYLES } from "./types";
+
 // import { themeService } from "../components/auth/services/themeService";
 
 /*
@@ -14,6 +15,20 @@ export const changeTheme = (theme) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: CHANGE_THEME,
+      payload: error,
+    });
+  }
+};
+
+export const getStyles = (style) => async (dispatch) => {
+  try {
+    dispatch({
+      type: GET_STYLES,
+      payload: style,
+    });
+  } catch (error) {
+    dispatch({
+      type: GET_STYLES,
       payload: error,
     });
   }

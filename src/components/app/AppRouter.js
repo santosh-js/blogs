@@ -14,7 +14,7 @@ import HandleError from "../error/HandleError";
 import SignOut from "../auth/signout/SignOut";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { changeTheme } from "../../actions/themeActions";
+import { changeTheme } from "../../actions/muiActions";
 import { MUI_THEME } from "../../actions/types.js";
 import { lightTheme, darkTheme } from "./home/navbar/Themes";
 
@@ -63,7 +63,7 @@ AppRouter.propTypes = {
 
 // getting the theme object from store as props
 const mapStateToProps = (state) => ({
-  themeObject: state.theme,
+  themeObject: state.mui,
 });
 
 export default connect(mapStateToProps, { changeTheme })(AppRouter);

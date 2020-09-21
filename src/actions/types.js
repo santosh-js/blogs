@@ -1,7 +1,8 @@
 export const GET_ERRORS = "GET_ERRORS";
 
-// Type for theme changing
+// Type for theme changing & get style
 export const CHANGE_THEME = "CHANGE_THEME";
+export const GET_STYLES = "GET_STYLES";
 
 // Type for language changing
 export const CHANGE_LANGUAGE = "CHANGE_LANGUAGE";
