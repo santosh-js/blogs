@@ -7,37 +7,24 @@ import { Carousel } from "react-responsive-carousel";
 
 const ContactUs = (props) => {
   return (
-    <Paper style={{ width: "100%", height: "100%" }}>
-      <Carousel
-        autoPlay={true}
-        useKeyboardArrows={false}
-        showThumbs={false}
-        showStatus={false}
-        showArrows={false}
-        interval={2500}
-        infiniteLoop
-        transitionTime={600}
-        stopOnHover={false}
-        showIndicators={false}
-        swipeable={false}
-        dynamicHeight={true}
-      >
-        <div
-          className={styles.background}
-          key="slide1"
-          style={{ padding: 20, height: "100%" }}
-        >
-          Contact us #1
-        </div>
-        <div
-          className={styles.background}
-          key="slide2"
-          style={{ padding: 20, height: "100%" }}
-        >
-          Contact us #1
-        </div>
-      </Carousel>
-    </Paper>
+    <Carousel
+      autoPlay={true}
+      useKeyboardArrows={false}
+      showThumbs={false}
+      showStatus={false}
+      showArrows={false}
+      interval={2500}
+      infiniteLoop
+      transitionTime={600}
+      stopOnHover={false}
+      showIndicators={false}
+      swipeable={false}
+      dynamicHeight={true}
+    >
+      <div className={styles.backgroundOne}>Contact us #1</div>
+      <div className={styles.backgroundTwo}>Contact us #2</div>
+      <div className={styles.backgroundThree}>Contact us #3</div>
+    </Carousel>
   );
 };
 

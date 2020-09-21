@@ -1,2 +1,8 @@
 # reactjs-i18n-locize-app
-Demo react app using i18next, react-i18next &amp; locize
+
+## Spineor Blogspot
+
+```
+react hooks, i18next, react-i18next & locize
+
+```
