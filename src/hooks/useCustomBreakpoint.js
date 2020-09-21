@@ -9,10 +9,13 @@ function useCustomBreakpoint(theme) {
     )
   );
 
-  const isTab = useMediaQuery(
+  let isTab = useMediaQuery(
     theme.breakpoints.between(theme.layouts.tab.min, theme.layouts.tab.max)
   );
 
+  if (isMobile === true) {
+    isTab = true;
+  }
   const isDesktop = useMediaQuery(
     theme.breakpoints.between(
       theme.layouts.desktop.min,

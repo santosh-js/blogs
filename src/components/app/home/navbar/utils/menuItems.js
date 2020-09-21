@@ -10,7 +10,7 @@ export function getMenuItems(t) {
     },
     {
       menuTitle: t("navbar.contact"),
-      pageURL: "/contacts",
+      pageURL: "/contact",
     },
   ];
 }

@@ -9,9 +9,6 @@ export const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    [theme.breakpoints.down("xs")]: {
-      flexGrow: 1,
-    },
   },
   formControl: {
     margin: theme.spacing(1),

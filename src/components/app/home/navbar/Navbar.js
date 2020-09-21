@@ -110,27 +110,13 @@ function Navbar(props) {
     window.addEventListener("scroll", handleScroll);
   });
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", function (event) {
-  //     setScroll(window.scrollY);
-  //     if (scroll > 50) {
-  //       setBackground("primary");
-  //       setPosition("fixed");
-  //     } else {
-  //       setBackground("primary");
-  //       setPosition("static");
-  //     }
-  //   });
-  // }, [scroll]);
-
   return (
     <div className={classes.root}>
-      <AppBar color={background} style={{ translations: "transform(0.2)" }}>
+      <AppBar color={background} style={{ transition: "all 0.4s linear" }}>
         <Toolbar>
           <img src={logo} alt="Spineor Logo" />
-          <Typography variant="h6" className={classes.title} />
-
-          {isMobile ? (
+          <Typography className={classes.title} />
+          {isTab ? (
             <>
               <IconButton
                 edge="start"
@@ -303,7 +289,7 @@ function Navbar(props) {
                   className={classes.fontColor}
                   size="small"
                   component={Link}
-                  to="/contacts"
+                  to="/contact"
                 >
                   {t("navbar.contact")}
                 </Button>

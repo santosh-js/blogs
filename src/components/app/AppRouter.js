@@ -17,11 +17,13 @@ import { connect } from "react-redux";
 import { changeTheme } from "../../actions/muiActions";
 import { MUI_THEME } from "../../actions/types.js";
 import { lightTheme, darkTheme } from "./home/navbar/Themes";
+import AboutUs from "./home/navbar/about/AboutUs";
+import ContactUs from "./home/navbar/contact/ContactUs";
 
 function AppRouter(props) {
   useEffect(() => {
     const storageTheme = localStorage.getItem(MUI_THEME);
-    if (storageTheme !== props.themeObject.theme.palette.type) {
+    if (storageTheme !== props.mui.theme.palette.type) {
       storageTheme === "light"
         ? props.changeTheme(lightTheme)
         : props.changeTheme(darkTheme);
@@ -29,11 +31,14 @@ function AppRouter(props) {
   }, []);
 
   return (
-    <ThemeProvider theme={props.themeObject.theme}>
-      <Paper style={{ height: "100%", width: "100%" }}>
+    <ThemeProvider theme={props.mui.theme}>
+      <Paper square elevation={0} className={props.mui.style}>
         <Router>
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/about" exact component={AboutUs} />
+            <Route path="/contact" exact component={ContactUs} />
+
             {/*
               <RouteGuard path="/main/:user" exact component={Dashboard} />
               <Route path="/signin" exact component={SignIn} />
@@ -52,18 +57,18 @@ function AppRouter(props) {
 
 // default theme if no props passed
 // AppRouter.defaultProps = {
-//   themeObject: {},
+//   mui: {},
 // };
 
 // specifying the types of props passed to this component
 AppRouter.propTypes = {
-  themeObject: PropTypes.object.isRequired,
+  mui: PropTypes.object.isRequired,
   changeTheme: PropTypes.func.isRequired,
 };
 
 // getting the theme object from store as props
 const mapStateToProps = (state) => ({
-  themeObject: state.mui,
+  mui: state.mui,
 });
 
 export default connect(mapStateToProps, { changeTheme })(AppRouter);

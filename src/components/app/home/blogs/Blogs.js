@@ -17,26 +17,16 @@ import { makeStyles } from "@material-ui/core/styles";
 
 function Blogs(props) {
   const classes = makeStyles({
-    // root: {
-    //   background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-    //   border: 0,
-    //   borderRadius: 3,
-    //   boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
-    //   color: "white",
-    //   display: "flex",
-    //   alignItems: "center",
-    //   height: 48,
-    //   padding: "0 30px",
-    // },
     root: {
       display: "flex",
       background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
       marginTop: "10px",
       padding: "2px 4px",
-      // width: "40%",
       height: 55,
     },
     input: {
+      fontFamily: "Source sans pro",
+      fontSize: "25px",
       marginLeft: props.theme.spacing(5),
       flex: 1,
     },

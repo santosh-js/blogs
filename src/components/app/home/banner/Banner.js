@@ -1,5 +1,4 @@
 import React from "react";
-// import styles from "./Banner.module.css";
 import main from "../../../../assets/banners/banner-vid.mov";
 
 import Typist from "react-typist";
@@ -7,54 +6,46 @@ import Typed from "react-typed";
 import LogoAnimate from "./animation/LogoAnimate";
 import ReactPlayer from "react-player";
 import classnames from "classnames";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
 import styles from "./Banner.module.css";
 
 function CustomBanner() {
   return (
     <div>
-      <Carousel
-        autoPlay={false}
-        useKeyboardArrows={false}
-        showThumbs={false}
-        showStatus={false}
-        showArrows={false}
-        interval={0}
-        transitionTime={600}
-        stopOnHover={false}
-        showIndicators={false}
-        swipeable={false}
-        dynamicHeight={true}
-      >
-        <ReactPlayer
-          url={main}
-          playing={true}
-          loop
-          playbackRate={0.8}
-          width="100%"
-          height="100%"
-        />
-      </Carousel>
+      <ReactPlayer
+        url={main}
+        playing={true}
+        loop
+        playbackRate={0.8}
+        width="100%"
+        height="100%"
+      />
 
       <div
         style={{
           fontSize: 22,
-          fontFamily: "source-code-pro",
+          fontFamily: "Source Sans Pro",
           marginTop: "20%",
           position: "absolute",
           top: "20px",
           left: "30px",
-          color: "red",
+          color: "#999",
         }}
       >
-        <Typist>Welcome To Spineor Blogspot</Typist>
+        <Typed
+          style={{ color: "#0099e5", fontSize: "30px" }}
+          strings={["Welcome To Spineor Blogspot"]}
+          typeSpeed={50}
+        />
         <br />
         <Typist>
-          <span style={{ color: "#f96854" }}> Feeling Bored !</span>
+          <span style={{ color: "#f48924" }}>
+            Feeling <span style={{ color: "#ffdd00" }}>Bored !</span>
+          </span>
           <Typist.Backspace count={7} delay={2000} />
-          <span style={{ color: "green" }}>
-            Awesome ‍<span>🧔🏻</span>
+          <span>
+            <b>
+              Awesome ‍<span>🧔🏻</span>
+            </b>
           </span>
         </Typist>
         <LogoAnimate />
@@ -65,9 +56,20 @@ function CustomBanner() {
 
 export default CustomBanner;
 
-//
+// <Carousel
+//   autoPlay={false}
+//   useKeyboardArrows={false}
+//   showThumbs={false}
+//   showStatus={false}
+//   showArrows={false}
+//   interval={0}
+//   transitionTime={600}
+//   stopOnHover={false}
+//   showIndicators={false}
+//   swipeable={false}
+//   dynamicHeight={true}
+// >  </Carousel>
 
-//
 // <Typist>
 //   <span> Feeling Bored !</span>
 //   <Typist.Backspace count={7} delay={2000} />
@@ -100,3 +102,5 @@ export default CustomBanner;
 // </Typed>
 //
 //
+
+// ====================================================================
