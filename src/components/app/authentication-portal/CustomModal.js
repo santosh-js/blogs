@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SignIn from "../../auth/signin/SignIn";
 import SignUp from "../../auth/signup/SignUp";
 import { Modal, Fade } from "@material-ui/core";
@@ -6,9 +6,21 @@ import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
 import { useStyles } from "../home/Home.style";
 
-const CustomModal = (props) => {
-  return (
-    <Modal open={modal} onClose={closeModal} className={classes.modal}>
+const CustomModal = ({ data }) => {
+  const { url, modal, closeModal } = data;
+  const [signin, setSignin] = useState(false);
+  const switchForm = () => {
+    setSignin(!signin);
+  };
+  const classes = useStyles();
+
+  return ReactDOM.createPortal(
+    <Modal
+      disablePortal
+      open={modal}
+      onClose={closeModal}
+      className={classes.modal}
+    >
       <Fade in={modal}>
         <div className={classes.paper}>
           {signin ? (
@@ -18,7 +30,8 @@ const CustomModal = (props) => {
           )}
         </div>
       </Fade>
-    </Modal>
+    </Modal>,
+    document.getElementById("auth-modal")
   );
 };
 

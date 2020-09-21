@@ -1,7 +1,6 @@
 import React, { useEffect, useCallback, useState } from "react";
 import Navbar from "./navbar/Navbar";
 import AuthModalPortal from "../authentication-portal/AuthModalPortal";
-import Modal from "../authentication-portal/Modal";
 import Footer from "./footer/Footer";
 import BatchBlogs from "./blogs/BatchBlogs";
 import CustomBanner from "./banner/Banner";
@@ -30,7 +29,6 @@ function Home(props) {
     <div>
       <Navbar url={url} handleOpen={handleOpen} />
       <AuthModalPortal url={url} modal={open} closeModal={handleClose} />
-      <Modal />
       <CustomBanner />
       <BatchBlogs blogs={props.blogs} numPerBatch={9} />
       <Footer />

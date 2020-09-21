@@ -7,7 +7,8 @@ import ReactDOM from "react-dom";
 import { useStyles } from "../home/Home.style";
 import CustomModal from "./CustomModal";
 
-function AuthModalPortal({ url, modal, closeModal }) {
+function AuthModalPortal(props) {
+  const { url, modal, closeModal } = props;
   const [signin, setSignin] = useState(false);
 
   // const modalRoot = document.getElementById("auth_modal");
@@ -28,20 +29,7 @@ function AuthModalPortal({ url, modal, closeModal }) {
     setSignin(!signin);
   };
   const classes = useStyles();
-  return ReactDOM.createPortal(
-    <Modal open={modal} onClose={closeModal} className={classes.modal}>
-      <Fade in={modal}>
-        <div className={classes.paper}>
-          {signin ? (
-            <SignIn url={url} handleForm={switchForm} />
-          ) : (
-            <SignUp url={url} close={closeModal} handleForm={switchForm} />
-          )}
-        </div>
-      </Fade>
-    </Modal>,
-    document.getElementById("auth-modal")
-  );
+  return <CustomModal data={props} />;
 
   /*<CustomModal
       signin={signin}
