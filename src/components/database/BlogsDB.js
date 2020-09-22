@@ -1,12 +1,15 @@
+// assets import
 import planet1 from "../../assets/planets/planet1.jpg";
 import planet2 from "../../assets/planets/planet2.png";
 import planet3 from "../../assets/planets/planet3.jpg";
 import planet4 from "../../assets/planets/planet4.jpg";
 import planet5 from "../../assets/planets/planet5.jpg";
 import planet6 from "../../assets/planets/planet6.jpg";
-import styles from "../app/home/blogs/Blogs.module.css";
-import colors from "../app/home/blogs/Colors.module.css";
 
+// bg color css import
+import colors from "../home/blogs/Colors.module.css";
+
+// image & planet names array with styles
 export const BLOGS = [
   {
     id: 1,

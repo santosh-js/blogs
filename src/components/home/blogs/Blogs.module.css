@@ -1,0 +1,79 @@
+.image {
+  margin: 20px;
+  height: 260px;
+  width: 260px;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.3s linear;
+}
+
+.search {
+  max-width: 960px;
+  margin: 20px auto 30px;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(250px, 3fr));
+  justify-content: center;
+}
+
+.container {
+  max-width: 960px;
+  margin: 20px auto 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 30px;
+}
+
+.zone {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  transition: all 0.3s linear;
+}
+
+.font {
+  padding: 5px 0 5px 0;
+  text-align: center;
+  background-color: #2dde98;
+}
+
+.zone:hover {
+  transform: scale(1.01) rotate(1deg);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  -o-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+  -ms-box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
+    inset rgba(0, 0, 0, 0.15) 0px -10px 20px;
+}
+.section {
+  margin: 20px auto 30px;
+  display: grid;
+  grid-column: 1/4;
+  justify-content: center;
+}
+
+.button {
+  padding: 5px 15px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {
+  background-color: #3e8e41;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

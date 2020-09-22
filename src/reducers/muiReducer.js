@@ -1,3 +1,5 @@
+// Theme & styles global object actions
+
 import { CHANGE_THEME, GET_STYLES } from "../actions/types";
 import { createMuiTheme, makeStyles } from "@material-ui/core/styles";
 

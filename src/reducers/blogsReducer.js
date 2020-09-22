@@ -1,3 +1,5 @@
+// Blogs retreive action
+
 import { GET_BLOGS } from "../actions/types";
 
 const initialState = {

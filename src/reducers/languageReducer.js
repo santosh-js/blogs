@@ -1,7 +1,8 @@
+// Not using language feature as actions anywhere (yet to implement)
+
 import { CHANGE_LANGUAGE } from "../actions/types";
 
 const initialState = {
-  //   enable: false,
   language: {},
 };
 

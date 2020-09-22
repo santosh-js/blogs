@@ -1,3 +1,5 @@
+// Dependencies
+
 import React, { useState } from "react";
 import { Avatar, Button, Divider } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -8,8 +10,8 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { useStyles } from "../MaterialStyle";
 import serviceObj from "../services/AuthService";
-import "./SignIn.css";
 
+// Signup Component
 function SignUp(props) {
   const classes = useStyles();
   const [count, setCount] = useState(0);
@@ -31,7 +33,6 @@ function SignUp(props) {
 
   const signup = (event) => {
     event.preventDefault();
-    console.log(user);
     const response = serviceObj.registrationService(user);
     if (response) {
       setCount((prevCount) => prevCount + 1);
@@ -152,13 +153,6 @@ function SignUp(props) {
           </Grid>
         </form>
       </div>
-      <Divider />
-      <div style={{ marginTop: "10px" }}></div>
-      <button className="loginBtn loginBtn--facebook">
-        Login with Facebook
-      </button>
-      or
-      <button className="loginBtn loginBtn--google">Login with Google</button>
     </Container>
   );
 }

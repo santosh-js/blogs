@@ -1,3 +1,5 @@
+// Not using any where [deprecated]
+
 export default function classList(classes) {
   return Object.entries(classes)
     .filter((entry) => entry[1])

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
+import { Avatar, Button, Divider } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
@@ -8,7 +7,9 @@ import Typography from "@material-ui/core/Typography";
 import { useStyles } from "../MaterialStyle";
 import Container from "@material-ui/core/Container";
 import serviceObj from "../services/AuthService";
+import "./SignIn.css";
 
+// Signin component
 function SignIn(props) {
   const classes = useStyles();
   const CREDENTIALS = { username: "", password: "" };
@@ -22,7 +23,9 @@ function SignIn(props) {
     event.preventDefault();
     const response = serviceObj.loginService(creds.username, creds.password);
     if (response) {
-      props.url.push(`/main/${creds.username}`);
+      // removed main page from app now
+      // props.url.push(`/main/${creds.username}`);
+      // must show the profile icon in the navbar instead of routing to any page
     } else {
       props.url.push("/");
       alert("Invalid username/password");
@@ -94,6 +97,14 @@ function SignIn(props) {
           </Grid>
         </form>
       </div>
+      <Divider />
+      {/* oauth2 implementation pending for Facebook & Google  */}
+      <div style={{ marginTop: "10px" }}></div>
+      <button className="loginBtn loginBtn--facebook">
+        Login with Facebook
+      </button>
+      or
+      <button className="loginBtn loginBtn--google">Login with Google</button>
     </Container>
   );
 }

@@ -1,3 +1,5 @@
+// Yet to implement (not using anywhere)
+
 import { FETCH_LOCATION } from "../actions/types";
 
 const initialState = {

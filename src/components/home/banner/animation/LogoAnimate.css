@@ -1,0 +1,20 @@
+.letter {
+  margin: 0;
+  padding: 0;
+  font-size: 80px;
+  font-family: "Pacifico", cursive;
+  display: inline-block;
+  color: #999;
+  transition: all 250ms ease-in-out;
+}
+
+.letter.active {
+  transform: scale(1.1) rotate(10deg);
+  /* color: #00c16e; */
+}
+/*
+.animate {
+  color: #999;
+  font-size: 80px;
+  font-family: "Pacifico", cursive;
+} */

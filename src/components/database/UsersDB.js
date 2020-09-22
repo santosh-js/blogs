@@ -1,8 +1,10 @@
+// Basic stored auth users
+
 export const USERS = [
   {
     id: 20,
     firstName: "Jalaj",
-    lastName: "",
+    lastName: "Goel",
     email: "jalaj@spineor.com",
     username: "jalaj",
     password: "password",
@@ -11,8 +13,8 @@ export const USERS = [
     id: 21,
     firstName: "Santosh",
     lastName: "Sutar",
-    email: "santoshjsutar@gmail.com",
-    username: "santoshjs",
+    email: "snatosh@spineor.com",
+    username: "santosh",
     password: "password",
   },
 ];

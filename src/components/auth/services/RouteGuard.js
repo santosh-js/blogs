@@ -13,6 +13,7 @@ import serviceObj from "./AuthService.js";
 //   }
 // }
 
+// Custom router address bar url restricter
 function RouteGuard(props) {
   // check login here
   if (serviceObj.isLoggedIn()) {

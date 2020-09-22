@@ -1,22 +1,19 @@
+// dependencies
+
 import React from "react";
 import styles from "./HandleError.module.css";
 import { NavLink } from "react-router-dom";
 import { ERRORS } from "../database/ErrorsDB";
-// import FIRST_INDEX from "../auth/services/AuthService";
 
+// getting the error object based on the history uri
 function getErrorByUri(props) {
-  console.log(props.history.location.pathname);
-  console.log(ERRORS);
   const error = ERRORS.filter((error) => error.id === props.location.pathname);
-  console.log(error);
-  // return error[FIRST_INDEX]
   return error;
 }
 
+// Error UI component
 function HandleError(props) {
-  // const { id, value, style } = getErrorByUri(props.history);
   const [{ id, value, style }] = getErrorByUri(props);
-  console.log(id, value, style);
   return (
     <div className={styles.error}>
       <h3>{value}</h3>

@@ -1,9 +1,12 @@
+// getting all the user objects as array
 import { USERS } from "../../database/UsersDB";
 
+// USER ID = "unique_session_id"
 export const USER_SESSION = "unique_session_id";
 
 export const FIRST_INDEX = 0;
 
+// user constructor for new signups
 function User(id, firstName, lastName, email, username, password) {
   this.id = id;
   this.firstName = firstName;
@@ -13,6 +16,7 @@ function User(id, firstName, lastName, email, username, password) {
   this.password = password;
 }
 
+// user actions
 class AuthService {
   logout() {
     sessionStorage.removeItem(USER_SESSION);
@@ -23,14 +27,15 @@ class AuthService {
     return true;
   }
 
+  // for logins
   loginService(username, password) {
     const userArr = USERS.filter((user) => {
       return user.username === username;
     });
-    console.log(userArr);
     if (userArr.length !== 0) {
+      // if ([{ password }] === password) {
       if (userArr[FIRST_INDEX].password === password) {
-        // if ([{ password }] === password) {
+        // use window.atob() method to decode from base64
         const base64user = window.btoa(username);
         sessionStorage.setItem(USER_SESSION, base64user);
         return true;
@@ -39,12 +44,14 @@ class AuthService {
     }
   }
 
+  // for new signups
   registrationService({ id, firstName, lastName, email, username, password }) {
     const oldLen = USERS.length;
     const newLen = USERS.push(
       new User(id, firstName, lastName, email, username, password)
     );
 
+    // didnt use Math.floor(Math.random(...)*10)
     if (oldLen + 1 === newLen) return true;
     return false;
   }
